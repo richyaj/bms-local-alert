@@ -1,0 +1,24 @@
+services:
+  - type: worker
+    name: bms-local-alert
+    runtime: docker
+    plan: free
+    envVars:
+      - key: MOVIE_TITLE
+        value: Project Hail Mary
+      - key: CITY
+        value: Chennai
+      - key: THEATER
+        value: INOX Luxe
+      - key: FORMAT
+        value: IMAX
+      - key: NTFY_TOPIC
+        value: bms-imax-hailmary-chen-2026
+      - key: NTFY_SERVER
+        value: https://ntfy.sh
+      - key: BOOKING_URL
+        value: https://www.pvrcinemas.com/
+      - key: CHECK_INTERVAL
+        value: 5
+      - key: NOTIFY_ON_ERROR
+        value: true
